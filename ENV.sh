@@ -1,5 +1,5 @@
 # JAVA
-JAVA_HOME=~/java/JDKs/jdk1.8.0_101
+JAVA_HOME=./jdk
 PATH=$JAVA_HOME/bin:$PATH
 
 # Maven
