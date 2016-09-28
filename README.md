@@ -1,4 +1,7 @@
-# Bootstrap a java + maven project
+# Shell ENV for java projects
+
+
+## Init new project
 
 Set the dirname for your project:
 ```bash
