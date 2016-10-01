@@ -7,6 +7,6 @@ load test_helper
 
   run wget https://goo.gl/kYnxxZ -o ENV.sh  # Sync with README.md
 
-  [[ $status -eq 0 ]]
+  assert_success
   [[ -f ENV.sh ]]
 }

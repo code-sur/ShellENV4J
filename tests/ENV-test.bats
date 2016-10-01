@@ -27,6 +27,6 @@ assert_success() {
   . ENV.sh
   run java -version
 
-  [[ $status -eq 0 ]]
+  assert_success
   [[ $output = "java mock" ]]
 }
