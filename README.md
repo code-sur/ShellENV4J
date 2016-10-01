@@ -1,5 +1,5 @@
 # ShellENV4J - Shell environment for java projects
-[![Build Status](https://travis-ci.org/code-sur/setup-java-project.svg?branch=master)](https://travis-ci.org/code-sur/setup-java-project)
+[![Build Status](https://travis-ci.org/code-sur/ShellENV4J.svg?branch=master)](https://travis-ci.org/code-sur/ShellENV4J)
 
 
 ## Usage
