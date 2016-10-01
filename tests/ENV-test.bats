@@ -20,5 +20,5 @@ teardown() {
   run java -version
 
   assert_success
-  [[ $output = "java mock" ]]
+  assert_output "java mock"
 }
