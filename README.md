@@ -12,7 +12,7 @@
 
 ```bash
 cd your_project_basedir
-wget https://raw.githubusercontent.com/code-sur/setup-java-project/master/ENV.sh
+wget https://goo.gl/kYnxxZ
 ```
 
 Congratulations, setup is done!
