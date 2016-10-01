@@ -12,7 +12,7 @@
 
 ```bash
 cd your_project_basedir
-wget https://goo.gl/kYnxxZ
+wget https://goo.gl/kYnxxZ -o ENV.sh
 ```
 
 Congratulations, setup is done!

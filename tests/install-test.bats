@@ -2,9 +2,9 @@
 
 
 @test "it should install ENV.sh" {
-  cd $BATS_TMPDIR
+  cd `mktemp -d`
 
-  run wget https://goo.gl/kYnxxZ
+  run wget https://goo.gl/kYnxxZ -o ENV.sh  # Sync with README.md
 
   [[ $status -eq 0 ]]
   [[ -f ENV.sh ]]
