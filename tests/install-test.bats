@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+load test_helper
 
 
 @test "it should install ENV.sh" {

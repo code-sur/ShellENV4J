@@ -1,4 +1,6 @@
 #!/usr/bin/env bats
+load test_helper
+
 
 JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
