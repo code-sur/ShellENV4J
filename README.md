@@ -14,4 +14,5 @@
 cd your_project_basedir
 wget https://raw.githubusercontent.com/code-sur/setup-java-project/master/ENV.sh
 ```
+
 Congratulations, setup is done!
