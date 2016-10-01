@@ -2,6 +2,12 @@
 [![Build Status](https://travis-ci.org/code-sur/setup-java-project.svg?branch=master)](https://travis-ci.org/code-sur/setup-java-project)
 
 
+## Usage
+```bash
+. ENV.sh
+```
+
+
 ## Install
 
 ```bash
