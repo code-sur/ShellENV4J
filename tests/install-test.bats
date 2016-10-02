@@ -10,5 +10,5 @@ load test_helper
   run wget $INSTALL_URL -o $ENV  # Sync with README.md
 
   assert_success
-  [[ -f $ENV ]]
+  assert_file_exists $ENV
 }
