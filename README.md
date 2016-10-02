@@ -29,7 +29,7 @@ Maven home: /home/code/tutoriales/maven_getting_started/maven
 
 ```bash
 cd your_project_basedir
-wget https://goo.gl/kYnxxZ -o ENV.sh
+wget https://goo.gl/kYnxxZ -O ENV.sh
 ```
 
 Congratulations, setup is done!

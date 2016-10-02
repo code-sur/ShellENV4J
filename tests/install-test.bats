@@ -1,14 +1,26 @@
 #!/usr/bin/env bats
 load test_helper
 
+INSTALL_URL='https://goo.gl/kYnxxZ'
+DOWNLOAD_COMMAND="wget $INSTALL_URL -O $ENV"  # Sync with README.md
 
-@test "it should install ENV.sh" {
+
+setup() {
   TMPDIR=`mktemp -d`
   cd $TMPDIR
+}
 
-  INSTALL_URL='https://goo.gl/kYnxxZ'
-  run wget $INSTALL_URL -o $ENV  # Sync with README.md
+
+@test "it should download ENV.sh" {
+  run $DOWNLOAD_COMMAND
 
   assert_success
   assert_file_exists $ENV
+}
+
+
+@test "it should not download 'kYnxxZ'" {
+  run $DOWNLOAD_COMMAND
+
+  ! assert_file_exists 'kYnxxZ'
 }
