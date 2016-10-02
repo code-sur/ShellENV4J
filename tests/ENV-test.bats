@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+load test_helper
 
 JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
@@ -9,14 +10,14 @@ setup() {
 
 
 teardown() {
-    rm -f jdk
+  rm -f jdk
 }
 
 
 @test "it should set java" {
-  . ENV.sh
+  . $ENV
   run java -version
 
-  [[ $status -eq 0 ]]
-  [[ $output = "java mock" ]]
+  assert_success
+  assert_output "java mock"
 }
