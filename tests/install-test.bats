@@ -1,7 +1,6 @@
 #!/usr/bin/env bats
 load test_helper
 
-ENV='ENV.sh'
 
 @test "it should install ENV.sh" {
   TMPDIR=`mktemp -d`

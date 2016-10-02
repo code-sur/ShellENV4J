@@ -1,5 +1,7 @@
 #!/usr/bin/env bats
 
+ENV='ENV.sh'
+
 UNDERLINE='\e[4m'
 NO_UNDERLINE='\e[24m'
 
