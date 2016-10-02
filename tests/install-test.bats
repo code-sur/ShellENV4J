@@ -2,7 +2,7 @@
 load test_helper
 
 
-@test "it should install ENV.sh" {
+@test "it should download ENV.sh" {
   TMPDIR=`mktemp -d`
   cd $TMPDIR
 
