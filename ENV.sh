@@ -1,10 +1,12 @@
-if [[ ! -e ./jdk ]]; then
+JDK='./jdk'
+if [[ ! -e $JDK ]]; then
+  echo "jdk is not set"
   return 1
 fi
 
 
 # JAVA
-JAVA_HOME=./jdk
+JAVA_HOME=$JDK
 PATH=$JAVA_HOME/bin:$PATH
 
 # Maven
