@@ -4,15 +4,18 @@ IT='ENV'
 
 JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
+setup() {
+  ln -s $JDK jdk
+}
+
+teardown() {
+  rm -f jdk
+}
+
 
 @test "$IT should set java" {
-  ln -s $JDK jdk
-
   . $ENV
   run java -version
-
-  rm -f jdk
-
 
   assert_success
   assert_output "java mock"
@@ -20,6 +23,7 @@ JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
 
 @test "$IT should fail without jdk" {
+  rm -f jdk
   ENV_stderr_only() {
     . $ENV > /dev/null
   }
