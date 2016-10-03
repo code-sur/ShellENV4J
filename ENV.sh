@@ -1,6 +1,6 @@
 JDK='./jdk'
 if [[ ! -e $JDK ]]; then
-  echo "jdk is not set"
+  echo "ERROR: jdk is not set"
   return 1
 fi
 

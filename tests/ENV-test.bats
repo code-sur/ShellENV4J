@@ -21,5 +21,5 @@ JDK="$BATS_TEST_DIRNAME/mock_jdk"
 @test "it should fail without jdk" {
     run . $ENV
     assert_fail
-    assert_output_contains "jdk is not set"
+    assert_output_contains "ERROR"
 }
