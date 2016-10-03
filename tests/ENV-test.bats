@@ -1,10 +1,11 @@
 #!/usr/bin/env bats
 load test_helper
+IT='ENV'
 
 JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
 
-@test "it should set java" {
+@test "$IT should set java" {
   ln -s $JDK jdk
 
   . $ENV
@@ -18,7 +19,7 @@ JDK="$BATS_TEST_DIRNAME/mock_jdk"
 }
 
 
-@test "it should fail without jdk" {
+@test "$IT should fail without jdk" {
     run . $ENV
     assert_fail
     assert_output_contains "ERROR"
