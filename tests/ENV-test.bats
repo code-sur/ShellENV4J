@@ -20,7 +20,7 @@ JDK="$BATS_TEST_DIRNAME/mock_jdk"
 
 
 @test "$IT should fail without jdk" {
-    run . $ENV
-    assert_fail
-    assert_output_contains "ERROR"
+  run . $ENV
+  assert_fail
+  assert_output_contains "ERROR"
 }
