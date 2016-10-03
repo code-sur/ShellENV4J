@@ -34,3 +34,12 @@ assert_file_exists() {
     return 1
   fi
 }
+
+
+assert_fail() {
+  SUCCESS=0
+  if [ "$status" -eq $SUCCESS ]; then
+    echo -e "${UNDERLINE}command successed, but should fail"
+    return 1
+  fi
+}
