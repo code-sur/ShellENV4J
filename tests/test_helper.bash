@@ -43,3 +43,13 @@ assert_fail() {
     return 1
   fi
 }
+
+
+assert_output_contains() {
+  expected=$1
+  actual=$output
+  if [[ "$actual" != *"$expected"* ]]; then
+    echo -e "${UNDERLINE}'$actual' does not contain '$expected'"
+    return 1
+  fi
+}
