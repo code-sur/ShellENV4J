@@ -27,6 +27,8 @@ Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T13:41:4
 ```bash
 cd your_project_basedir
 wget https://goo.gl/kYnxxZ -O ENV.sh
+ln -s path_to_java_home jdk
+ln -s path_to_maven_home maven
 ```
 
 Congratulations, setup is done!
