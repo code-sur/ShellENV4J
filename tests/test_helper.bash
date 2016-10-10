@@ -1,11 +1,19 @@
 #!/usr/bin/env bats
 
-ENV='ENV.sh'
+BASEDIR="$BATS_TEST_DIRNAME/.."
+ENV="$BASEDIR/ENV.sh"
 
 UNDERLINE='\e[4m'
 NO_UNDERLINE='\e[24m'
 RED='\e[31m'
 LIGHT_RED='\e[91m'
+
+
+enter_into_tmpdir() {
+  RETURN_TMPDIR=`mktemp -d`
+  cd $RETURN_TMPDIR
+  echo $RETURN_TMPDIR  # bash is so ugly
+}
 
 
 underline_echo() {

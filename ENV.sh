@@ -1,5 +1,6 @@
-JDK='./jdk'
-MAVEN='./maven'
+BASEDIR=`dirname ${BASH_SOURCE[0]}`
+JDK="$BASEDIR/jdk"
+MAVEN="$BASEDIR/maven"
 if [[ ! -e $JDK ]]; then
   (>&2 echo "ERROR: jdk is not set")
   return 1
@@ -15,5 +16,5 @@ JAVA_HOME=$JDK
 PATH=$JAVA_HOME/bin:$PATH
 
 # Maven
-MAVEN_HOME=./maven
+MAVEN_HOME=$MAVEN
 PATH=$MAVEN_HOME/bin:$PATH

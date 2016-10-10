@@ -3,16 +3,20 @@ load test_helper
 IT='ENV'
 
 JDK="$BATS_TEST_DIRNAME/mock_jdk"
+JDK_LINK="$BASEDIR/jdk"
 MAVEN_HOME="$BATS_TEST_DIRNAME/mock_maven"
+MAVEN_LINK="$BASEDIR/maven"
 
 setup() {
-  ln -s $JDK jdk
-  ln -s $MAVEN_HOME maven
+  enter_into_tmpdir
+  ln -s $JDK $JDK_LINK
+  ln -s $MAVEN_HOME $MAVEN_LINK
 }
 
 teardown() {
-  rm -f jdk
-  rm -f maven
+  rm -f $JDK_LINK
+  rm -f $MAVEN_LINK
+  rm -rf $RETURN_TMPDIR
 }
 
 
@@ -24,9 +28,17 @@ teardown() {
   assert_output "java mock"
 }
 
+@test "$IT should set maven" {
+  . $ENV
+  run mvn -version
+
+  assert_success
+  assert_output "maven mock"
+}
+
 
 @test "$IT should fail without jdk" {
-  rm -f jdk
+  rm -f $JDK_LINK
   ENV_stderr_only() {
     . $ENV > /dev/null
   }
@@ -37,7 +49,7 @@ teardown() {
 
 
 @test "$IT should fail without maven" {
-  rm -f maven
+  rm -f $MAVEN_LINK
   ENV_stderr_only() {
     . $ENV > /dev/null
   }
