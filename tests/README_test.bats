@@ -4,9 +4,12 @@ IT="README's install"
 
 DOWNLOAD_COMMAND="wget https://goo.gl/kYnxxZ -O ENV.sh"  # Sync with README.md
 
-
 setup() {
   enter_into_tmpdir
+}
+
+teardown() {
+    rm -rf $RETURN_TMPDIR
 }
 
 

@@ -53,5 +53,8 @@ teardown() {
   enter_into_tmpdir
 
   run . $ENV
+
   assert_success
+
+  rm -rf $RETURN_TMPDIR
 }

@@ -10,8 +10,9 @@ LIGHT_RED='\e[91m'
 
 
 enter_into_tmpdir() {
-  TMPDIR=`mktemp -d`
-  cd $TMPDIR
+  RETURN_TMPDIR=`mktemp -d`
+  cd $RETURN_TMPDIR
+  echo $RETURN_TMPDIR  # bash is so ugly
 }
 
 
