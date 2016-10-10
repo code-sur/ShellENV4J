@@ -2,8 +2,7 @@
 load test_helper
 IT="README's install"
 
-INSTALL_URL='https://goo.gl/kYnxxZ'
-DOWNLOAD_COMMAND="wget $INSTALL_URL -O $ENV"  # Sync with README.md
+DOWNLOAD_COMMAND="wget https://goo.gl/kYnxxZ -O ENV.sh"  # Sync with README.md
 
 
 setup() {
