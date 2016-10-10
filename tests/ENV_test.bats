@@ -50,8 +50,7 @@ teardown() {
 
 
 @test "$IT shouldn't fail out of basedir" {
-  TMPDIR=`mktemp -d`
-  cd $TMPDIR
+  enter_into_tmpdir
 
   run . $ENV
   assert_success

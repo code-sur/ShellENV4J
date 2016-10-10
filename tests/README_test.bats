@@ -6,8 +6,7 @@ DOWNLOAD_COMMAND="wget https://goo.gl/kYnxxZ -O ENV.sh"  # Sync with README.md
 
 
 setup() {
-  TMPDIR=`mktemp -d`
-  cd $TMPDIR
+  enter_into_tmpdir
 }
 
 

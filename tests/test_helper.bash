@@ -9,6 +9,12 @@ RED='\e[31m'
 LIGHT_RED='\e[91m'
 
 
+enter_into_tmpdir() {
+  TMPDIR=`mktemp -d`
+  cd $TMPDIR
+}
+
+
 underline_echo() {
   echo -e "${UNDERLINE}" "$@"
 }
