@@ -27,11 +27,15 @@ teardown() {
 }
 
 @test "$IT should set maven" {
+  enter_into_tmpdir
+
   . $ENV
   run mvn -version
 
   assert_success
   assert_output "maven mock"
+
+  rm -rf $RETURN_TMPDIR
 }
 
 
