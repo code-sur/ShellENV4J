@@ -8,6 +8,7 @@ MAVEN_HOME="$BATS_TEST_DIRNAME/mock_maven"
 MAVEN_LINK="$BASEDIR/maven"
 
 setup() {
+  enter_into_tmpdir
   ln -s $JDK $JDK_LINK
   ln -s $MAVEN_HOME $MAVEN_LINK
 }
@@ -15,6 +16,7 @@ setup() {
 teardown() {
   rm -f $JDK_LINK
   rm -f $MAVEN_LINK
+  rm -rf $RETURN_TMPDIR
 }
 
 
@@ -27,20 +29,16 @@ teardown() {
 }
 
 @test "$IT should set maven" {
-  enter_into_tmpdir
-
   . $ENV
   run mvn -version
 
   assert_success
   assert_output "maven mock"
-
-  rm -rf $RETURN_TMPDIR
 }
 
 
 @test "$IT should fail without jdk" {
-  rm -f jdk
+  rm -f $JDK_LINK
   ENV_stderr_only() {
     . $ENV > /dev/null
   }
@@ -51,22 +49,11 @@ teardown() {
 
 
 @test "$IT should fail without maven" {
-  rm -f maven
+  rm -f $MAVEN_LINK
   ENV_stderr_only() {
     . $ENV > /dev/null
   }
   run ENV_stderr_only
   assert_fail
   assert_output_contains "ERROR"
-}
-
-
-@test "$IT shouldn't fail out of basedir" {
-  enter_into_tmpdir
-
-  run . $ENV
-
-  assert_success
-
-  rm -rf $RETURN_TMPDIR
 }
