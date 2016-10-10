@@ -47,3 +47,12 @@ teardown() {
   assert_fail
   assert_output_contains "ERROR"
 }
+
+
+@test "$IT shouldn't fail out of basedir" {
+  TMPDIR=`mktemp -d`
+  cd $TMPDIR
+
+  run . $ENV
+  assert_success
+}

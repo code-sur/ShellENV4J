@@ -1,5 +1,6 @@
-JDK='./jdk'
-MAVEN='./maven'
+BASEDIR=`dirname ${BASH_SOURCE[0]}`
+JDK="$BASEDIR/jdk"
+MAVEN="$BASEDIR/maven"
 if [[ ! -e $JDK ]]; then
   (>&2 echo "ERROR: jdk is not set")
   return 1
