@@ -2,9 +2,9 @@
 load test_helper
 IT='ENV'
 
-JDK="$BATS_TEST_DIRNAME/mock_jdk"
+JDK="$BATS_TEST_DIRNAME/jdk_mock"
 JDK_LINK="$BASEDIR/jdk"
-MAVEN_HOME="$BATS_TEST_DIRNAME/mock_maven"
+MAVEN_HOME="$BATS_TEST_DIRNAME/maven_mock"
 MAVEN_LINK="$BASEDIR/maven"
 
 setup() {
