@@ -1,6 +1,7 @@
 #!/usr/bin/env bats
 
-ENV='ENV.sh'
+BASEDIR="$BATS_TEST_DIRNAME/.."
+ENV="$BASEDIR/ENV.sh"
 
 UNDERLINE='\e[4m'
 NO_UNDERLINE='\e[24m'
