@@ -26,6 +26,14 @@ teardown() {
   assert_output "java mock"
 }
 
+@test "$IT should set maven" {
+  . $ENV
+  run mvn -version
+
+  assert_success
+  assert_output "maven mock"
+}
+
 
 @test "$IT should fail without jdk" {
   rm -f jdk
