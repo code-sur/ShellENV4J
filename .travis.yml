@@ -1,6 +1,4 @@
-before_install: ./provision.sh
-
+sudo: required
+install: ./provision.sh
 language: bash
-
-script:
-  - bats tests
+script: bats tests
