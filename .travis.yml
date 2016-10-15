@@ -1,4 +1,4 @@
-install: ./provision.sh
+before_install: ./provision.sh
 
 language: bash
 
