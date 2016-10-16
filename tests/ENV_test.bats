@@ -57,3 +57,12 @@ teardown() {
   assert_fail
   assert_output_contains "ERROR"
 }
+
+
+@test "$IT should set maven to run when sourcing from basedir and changing dir" {
+  cd $BASEDIR
+  . ENV.sh
+  cd $BATS_TMPDIR
+  run mvn -version
+  assert_success
+}
