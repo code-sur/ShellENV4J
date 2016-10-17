@@ -75,3 +75,13 @@ assert_equals() {
     return 1
   fi
 }
+
+
+assert_contains() {
+  actual=$1
+  expected=$2
+  if [[ "$actual" != *"$expected"* ]]; then
+    underline_echo "'$actual' does not contain '$expected'"
+    return 1
+  fi
+}

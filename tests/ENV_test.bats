@@ -72,5 +72,7 @@ teardown() {
   PS1='PS1'
   ORIGINAL_PS1=$PS1
   . $ENV
-  assert_equals "$PS1" "jdk: mock $ORIGINAL_PS1"
+  assert_contains "$PS1" "$ORIGINAL_PS1"
+  assert_contains "$PS1" "jdk"
+  assert_contains "$PS1" "mock"
 }

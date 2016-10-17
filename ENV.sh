@@ -21,4 +21,6 @@ PATH=$MAVEN_HOME/bin:$PATH
 
 # PS1
 JDK_VERSION=`java -version 2>&1 | sed -nr 's/.*"(.*)".*/\1/p'`
-PS1="jdk: $JDK_VERSION $PS1"
+BOLD='\e[1m'
+NO_BOLD='\e[21m'
+PS1="jdk$BOLD$JDK_VERSION$NO_BOLD $PS1"
