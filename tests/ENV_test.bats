@@ -25,7 +25,7 @@ teardown() {
   run java -version
 
   assert_success
-  assert_output "java mock"
+  assert_output 'java version "mock"'
 }
 
 @test "$IT should set maven" {
@@ -65,4 +65,14 @@ teardown() {
   cd $BATS_TMPDIR
   run mvn -version
   assert_success
+}
+
+
+@test "$IT should set java version in PS1" {
+  PS1='PS1'
+  ORIGINAL_PS1=$PS1
+  . $ENV
+  assert_contains "$PS1" "$ORIGINAL_PS1"
+  assert_contains "$PS1" "jdk"
+  assert_contains "$PS1" "mock"
 }
