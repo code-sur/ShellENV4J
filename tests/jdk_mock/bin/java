@@ -1,1 +1,1 @@
-echo 'java version "mock"'
+(>&2 echo 'java version "mock"')
