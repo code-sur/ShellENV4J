@@ -3,10 +3,7 @@
 BASEDIR="$BATS_TEST_DIRNAME/.."
 ENV="$BASEDIR/ENV.sh"
 
-UNDERLINE='\e[4m'
-NO_UNDERLINE='\e[24m'
-RED='\e[31m'
-LIGHT_RED='\e[91m'
+INVERT='\e[7m'
 
 
 enter_into_tmpdir() {
@@ -17,7 +14,7 @@ enter_into_tmpdir() {
 
 
 underline_echo() {
-  echo -e "${UNDERLINE}" "$@"
+  echo -e "${INVERT}" "$@"
 }
 
 
