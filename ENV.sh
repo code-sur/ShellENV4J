@@ -1,4 +1,4 @@
-BASEDIR=`dirname ${BASH_SOURCE[0]} | xargs realpath`
+BASEDIR=`dirname ${BASH_SOURCE[0]} | xargs readlink -f`
 JDK="$BASEDIR/jdk"
 MAVEN="$BASEDIR/maven"
 if [[ ! -e $JDK ]]; then
