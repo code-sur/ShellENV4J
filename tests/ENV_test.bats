@@ -25,7 +25,7 @@ teardown() {
   run java -version
 
   assert_success
-  assert_output "java mock"
+  assert_output 'java version "mock"'
 }
 
 @test "$IT should set maven" {
