@@ -66,3 +66,11 @@ teardown() {
   run mvn -version
   assert_success
 }
+
+
+@test "$IT should set java version in PS1" {
+  PS1='PS1'
+  ORIGINAL_PS1=$PS1
+  . $ENV
+  assert_equals "$PS1" "jdk: mock $ORIGINAL_PS1"
+}
