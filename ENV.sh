@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 BASEDIR=`dirname ${BASH_SOURCE[0]} | xargs readlink -f`
 JDK="$BASEDIR/jdk"
 MAVEN="$BASEDIR/maven"
