@@ -23,3 +23,9 @@ PATH=$MAVEN_HOME/bin:$PATH
 YELLOW='\e[33m'
 DEFAULT='\e[39m'
 PS1="$YELLOW(ShellENV4J)$DEFAULT $PS1"
+
+# Source additional script
+ADDITIONAL_SCRIPT='.envrc'
+if [[ -f $ADDITIONAL_SCRIPT ]]; then
+    . $ADDITIONAL_SCRIPT
+fi

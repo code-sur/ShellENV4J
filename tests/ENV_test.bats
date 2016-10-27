@@ -75,3 +75,9 @@ teardown() {
   assert_contains "$PS1" "$ORIGINAL_PS1"
   assert_contains "$PS1" "(ShellENV4J)"
 }
+
+@test "$IT should source .envrc" {
+  cd $BASEDIR
+  run . ENV.sh
+  assert_output "envrc mock"
+}
