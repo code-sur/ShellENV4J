@@ -68,11 +68,10 @@ teardown() {
 }
 
 
-@test "$IT should set java version in PS1" {
-  PS1='PS1'
+@test "$IT should set ShellENV4J in PS1" {
+  PS1='user@mockPS1:~/$'
   ORIGINAL_PS1=$PS1
   . $ENV
   assert_contains "$PS1" "$ORIGINAL_PS1"
-  assert_contains "$PS1" "jdk"
-  assert_contains "$PS1" "mock"
+  assert_contains "$PS1" "(ShellENV4J)"
 }
