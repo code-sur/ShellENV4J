@@ -63,12 +63,12 @@ teardown() {
 }
 
 
-@test "$IT should set maven to run when sourcing from basedir and changing dir" {
-  cd $WORKDIR
+@test "$IT should allow running maven after changing dir" {
   . ENV.sh
   cd $BATS_TMPDIR
   run mvn -version
   assert_success
+  assert_output "maven mock"
 }
 
 
