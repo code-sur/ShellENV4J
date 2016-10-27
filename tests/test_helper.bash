@@ -1,7 +1,6 @@
 #!/usr/bin/env bats
 
 BASEDIR="$BATS_TEST_DIRNAME/.."
-ENV="$BASEDIR/ENV.sh"
 
 INVERT='\e[7m'
 
