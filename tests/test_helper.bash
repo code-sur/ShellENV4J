@@ -1,19 +1,16 @@
 #!/usr/bin/env bats
 
 BASEDIR="$BATS_TEST_DIRNAME/.."
-ENV="$BASEDIR/ENV.sh"
-
-INVERT='\e[7m'
 
 
 enter_into_tmpdir() {
-  RETURN_TMPDIR=`mktemp -d`
-  cd $RETURN_TMPDIR
-  echo $RETURN_TMPDIR  # bash is so ugly
+  WORKDIR=`mktemp -d`  # this var is widely used
+  cd $WORKDIR
 }
 
 
 inverted_echo() {
+  INVERT='\e[7m'
   echo -e "${INVERT}" "$@"
 }
 
