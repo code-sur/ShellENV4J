@@ -2,8 +2,6 @@
 
 BASEDIR="$BATS_TEST_DIRNAME/.."
 
-INVERT='\e[7m'
-
 
 enter_into_tmpdir() {
   RETURN_TMPDIR=`mktemp -d`
@@ -13,6 +11,7 @@ enter_into_tmpdir() {
 
 
 inverted_echo() {
+  INVERT='\e[7m'
   echo -e "${INVERT}" "$@"
 }
 
