@@ -9,7 +9,7 @@ setup() {
 }
 
 teardown() {
-    rm -rf $RETURN_TMPDIR
+    rm -rf $WORKDIR
 }
 
 

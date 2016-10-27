@@ -8,19 +8,19 @@ MAVEN_HOME="$BATS_TEST_DIRNAME/maven_mock"
 setup() {
   enter_into_tmpdir
 
-  cp $BASEDIR/ENV.sh $RETURN_TMPDIR
+  cp $BASEDIR/ENV.sh $WORKDIR
 
-  JDK_LINK="$RETURN_TMPDIR/jdk"
+  JDK_LINK="$WORKDIR/jdk"
   ln -s $JDK $JDK_LINK
 
-  MAVEN_LINK="$RETURN_TMPDIR/maven"
+  MAVEN_LINK="$WORKDIR/maven"
   ln -s $MAVEN_HOME $MAVEN_LINK
 }
 
 teardown() {
   rm -f $JDK_LINK
   rm -f $MAVEN_LINK
-  rm -rf $RETURN_TMPDIR
+  rm -rf $WORKDIR
 }
 
 
@@ -64,7 +64,7 @@ teardown() {
 
 
 @test "$IT should set maven to run when sourcing from basedir and changing dir" {
-  cd $RETURN_TMPDIR
+  cd $WORKDIR
   . ENV.sh
   cd $BATS_TMPDIR
   run mvn -version
@@ -81,7 +81,7 @@ teardown() {
 }
 
 @test "$IT should source .envrc" {
-  cp $BASEDIR/.envrc $RETURN_TMPDIR
+  cp $BASEDIR/.envrc $WORKDIR
   run . ENV.sh
   assert_output "envrc mock"
 }
