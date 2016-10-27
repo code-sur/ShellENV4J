@@ -3,13 +3,17 @@ load test_helper
 IT='ENV'
 
 JDK="$BATS_TEST_DIRNAME/jdk_mock"
-JDK_LINK="$BASEDIR/jdk"
 MAVEN_HOME="$BATS_TEST_DIRNAME/maven_mock"
-MAVEN_LINK="$BASEDIR/maven"
 
 setup() {
   enter_into_tmpdir
+
+  cp $BASEDIR/ENV.sh $RETURN_TMPDIR
+
+  JDK_LINK="$RETURN_TMPDIR/jdk"
   ln -s $JDK $JDK_LINK
+
+  MAVEN_LINK="$RETURN_TMPDIR/maven"
   ln -s $MAVEN_HOME $MAVEN_LINK
 }
 
@@ -21,7 +25,7 @@ teardown() {
 
 
 @test "$IT should set java" {
-  . $ENV
+  . ENV.sh
   run java -version
 
   assert_success
@@ -29,7 +33,7 @@ teardown() {
 }
 
 @test "$IT should set maven" {
-  . $ENV
+  . ENV.sh
   run mvn -version
 
   assert_success
@@ -40,7 +44,7 @@ teardown() {
 @test "$IT should fail without jdk" {
   rm -f $JDK_LINK
   ENV_stderr_only() {
-    . $ENV > /dev/null
+    . ENV.sh > /dev/null
   }
   run ENV_stderr_only
   assert_fail
@@ -51,7 +55,7 @@ teardown() {
 @test "$IT should fail without maven" {
   rm -f $MAVEN_LINK
   ENV_stderr_only() {
-    . $ENV > /dev/null
+    . ENV.sh > /dev/null
   }
   run ENV_stderr_only
   assert_fail
@@ -60,7 +64,7 @@ teardown() {
 
 
 @test "$IT should set maven to run when sourcing from basedir and changing dir" {
-  cd $BASEDIR
+  cd $RETURN_TMPDIR
   . ENV.sh
   cd $BATS_TMPDIR
   run mvn -version
@@ -71,13 +75,13 @@ teardown() {
 @test "$IT should set ShellENV4J in PS1" {
   PS1='user@mockPS1:~/$'
   ORIGINAL_PS1=$PS1
-  . $ENV
+  . ENV.sh
   assert_contains "$PS1" "$ORIGINAL_PS1"
   assert_contains "$PS1" "(ShellENV4J)"
 }
 
 @test "$IT should source .envrc" {
-  cd $BASEDIR
+  cp $BASEDIR/.envrc $RETURN_TMPDIR
   run . ENV.sh
   assert_output "envrc mock"
 }

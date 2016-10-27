@@ -17,7 +17,7 @@ teardown() {
   run $DOWNLOAD_COMMAND
 
   assert_success
-  assert_file_exists $ENV
+  assert_file_exists ENV.sh
 }
 
 
