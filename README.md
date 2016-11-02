@@ -3,7 +3,7 @@
 
 
 ## Usage example
-```bash
+```
   $ cd project_basedir
   $ java -version  # no java in PATH
 The program 'java' is currently not installed.
@@ -11,10 +11,10 @@ The program 'java' is currently not installed.
 The program 'mvn' is currently not installed.
 ```
 
-```bash
+```
   $ . ENV.sh  # that's all
 ```
-```bash
+```
   $ java -version  # project's java is now in PATH!
 java version "1.8.0_101"
   $ mvn -version  # project's maven is now in PATH!
@@ -23,7 +23,7 @@ Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T13:41:4
 
 
 ## Install
-```bash
+```
 cd your_project_basedir
 wget https://goo.gl/kYnxxZ -O ENV.sh
 ln -s <path_to_java_home> jdk
