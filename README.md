@@ -33,7 +33,7 @@ ln -s <path_to_maven_home> maven
 ### Recommendations
 If your project is under version control (git, right?), the suggestion is:
 * Commit `ENV.sh`
-* Ignore `jdk` and `maven`
+* Ignore `jdk` and `maven` symlinks
 
 
 Congratulations, setup is done!
